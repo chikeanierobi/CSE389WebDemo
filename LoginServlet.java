@@ -31,7 +31,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 		}
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","Dimmy42!2");
+		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root");
 		Statement stmnt = con1.createStatement();
 		PreparedStatement preparedStatement=con1.prepareStatement("insert into base values(?,?,?)");
 		 System.out.println("reached");
