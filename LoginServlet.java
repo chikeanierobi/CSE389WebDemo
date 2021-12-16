@@ -3,7 +3,6 @@ package com.ServletPackage;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -12,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends javax.servlet.http.HttpServlet {	
 	/**
-	 * 
+	 * This servlet is connect to the login.jsp file. It takes the user inputed data
+	 * and compares it to existing emails and passwords in the data. If there is a match
+	 * the user is rerouted to the home page and is otherwise sent to an error page
 	 */
 	private static final long serialVersionUID = 1L;
 	String email;
@@ -24,34 +25,27 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 		password = req1.getParameter("password1");
 		
 		//PrintWriter out = res1.getWriter();
-		if ((email.equals("admin@gmail.com")) && (password.equals("admin"))) {
-			res1.sendRedirect("WebDemo.jsp");
-		}else {
-			res1.sendRedirect("Error.jsp");
-		}
 		try {
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","DATABASE NAME","DATABASE PASSWORD");
 		Statement stmnt = con1.createStatement();
-		PreparedStatement preparedStatement=con1.prepareStatement("insert into base values(?,?,?)");
-		 System.out.println("reached");
-		 //Setting values for Each Parameter
-		preparedStatement.setString(1,email);
-        preparedStatement.setString(2,password);
-        preparedStatement.setString(3,email);
-        preparedStatement.executeUpdate();
+		
+		//Creates a mySQL query to search for the user's email in its database
         String query = "select * from base where email = '" + email + "' and password= '" + password + "'"; //You have to check that it's equal to what is in the database
 		ResultSet rs1 = stmnt.executeQuery(query);
-   
-		System.out.println("reached");
+		String demail = (rs1.getString("email"));
 		
-		if (rs1.next()) {  //We want to check if it matches what we have in the database, so login would be successful
+		//We want to check if it matches what we have in the database, so login would be successful
+		if (demail.equals(email)) {                        
 			System.out.println("Logged in successfully!");
-		}else {
+			res1.sendRedirect("WebDemo.jsp");
+		//Redirects the user to an error page and requests them to enter valid credentials
+		}else {                                            
 			System.out.println("Login failed!");
+			res1.sendRedirect("Error.jsp");
 		}
 	}catch(Exception e) {
-		System.out.println(e);
+		res1.sendRedirect("Error.jsp");
 	}
 	}
 }
