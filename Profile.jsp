@@ -1,10 +1,12 @@
+
+<!--Allows us to create the profile page, a subsection of the Profile option on the webSite  -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Profile</title>
 <style>
 .navbar {
   overflow: hidden;
@@ -79,10 +81,10 @@
 </head>
 <body>
 </head>
-<body style="background-color:#F5F5DC">
-<h1><center>PDFMarket</center></h1>  <!-- The name of the website -->
+<body style="background-color:#F5F5DC">  <!-- Color code for our background color, beige -->
+<h1><center>PDFMarket</center></h1>  <!-- The name of the webSite -->
 
-<h2><center>Welcome to the market of PDFs!</center></h2>
+<h2><center>Welcome to the market of PDFs!</center></h2>  <!-- Info about the webSite -->
 <h3><center>Why buy a hardcopy of a book when you can just get it for free? </center></h3>
 
 <div class="navbar">
@@ -91,7 +93,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="Profile.jsp">PROFILE</a>
+      <a href="Profile.jsp">Profile</a>
       <a href="login.jsp">Sign Out</a>
     </div>
   </div> 
@@ -155,6 +157,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </div>
