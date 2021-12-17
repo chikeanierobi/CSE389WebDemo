@@ -42,10 +42,6 @@
 					<input name = "password1" type="password" placeholder="Enter password" class="form-control mb-4">
 				<b><label class="form-label" for="password2" >Confirm Password</label></b>
 					<input name = "password2" type="password" placeholder="Enter password again" class="form-control mb-4">
-				<b><label class= "form-label" for="phone">Phone Number</label></b>
-  					<input name="phone" type="tel" id="phone" placeholder="123-456-7890" class="form-control mb-4" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required >
-  				<b><label class= "form-label" for="birthdate">DOB</label></b>
-					<input name="birthdate" type="date" id="birthdate" class="form-control mb-4">
 				<!-- Button was created to lead the user to the homepage -->
 				<button class="btn btn-primary mb-5" type="submit">Sign Up</button>
 				<!-- Button was created in order to basically clear the form -->
