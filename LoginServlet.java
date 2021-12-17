@@ -6,10 +6,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class LoginServlet extends jakarta.servlet.http.HttpServlet {	
+public class LoginServlet extends javax.servlet.http.HttpServlet {	
 	/**
 	 * This servlet is connected to the login.jsp file. It takes the user inputed data
 	 * and compares it to existing emails and passwords in the data. If there is a match
