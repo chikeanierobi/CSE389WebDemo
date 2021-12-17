@@ -8,7 +8,9 @@ Created RegistrationServlet.java used to handle requests and responses sent betw
 
 Created LoginServlet.java used to handle requests and response sent between login.jsp and the web server (Also plan to use this to be able to communicate and confirm whether entered responses align with the info in the database specified to that user)
 
-Created Error.jsp to display when the user enters invalid input
+Created LoginError.jsp to display when the user enters invalid input
+
+Created RegistrationError.jsp to display if user tries to create an account with an existing account's email address
 
 Created a database to keep all the pdf files that make up our specified catalog
 
